@@ -13,7 +13,12 @@ __pycache__/
 data/raw/
 data/external/
 
+# Modelos
+models/
+
 # Sistema
 .DS_Store
 Thumbs.db
 
+#kaggle
+.kaggle/
