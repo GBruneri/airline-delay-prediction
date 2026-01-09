@@ -1,30 +1,28 @@
-# ============================
-# Configurações gerais do projeto
-# ============================
-
-# Reprodutibilidade
 RANDOM_STATE = 42
 
-# Dataset
-DATASET_NAME = "Airline Delay Cause"
+# Problema
+PROBLEM_TYPE = "classification"
+TARGET_NAME = "delay_probability"
+TARGET_BINARY_NAME = "target"
 
-# Colunas principais
-TARGET_COL = "atraso_medio_por_voo"
+# Definição do atraso
+DELAY_THRESHOLD_MINUTES = 15
+TARGET_QUANTILE = 0.75
 
-ID_COLS = [
-    "year",
-    "month",
-    "carrier",
-    "airport",
+# Colunas proibidas (leakage)
+LEAKAGE_COLS = [
+    "arr_delay",
+    "carrier_delay",
+    "weather_delay",
+    "nas_delay",
+    "security_delay",
+    "late_aircraft_delay",
+    "carrier_ct",
+    "weather_ct",
+    "nas_ct",
+    "security_ct",
+    "late_aircraft_ct",
 ]
 
-# Colunas numéricas básicas (antes de feature engineering)
-NUMERIC_COLS = [
-    "arr_flights",
-    "arr_del15",
-    "arr_cancelled",
-    "arr_diverted",
-]
-
-# Horizonte de previsão (em meses)
-FORECAST_HORIZON = 1
+# Split temporal
+TRAIN_END_YEAR = 2018
