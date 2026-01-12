@@ -14,7 +14,7 @@ data/raw/
 data/external/
 
 # Modelos
-models/
+artifacts/
 
 # Sistema
 .DS_Store
